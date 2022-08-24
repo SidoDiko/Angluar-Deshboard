@@ -1,0 +1,73 @@
+<mat-toolbar class="mat-elevation-z8">
+  <button
+    mat-icon-button
+    *ngIf="sidenav.mode === 'over'"
+    (click)="sidenav.toggle()"
+  >
+    <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+    <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+  </button>
+  <img src="./assets/images/logo.png" alt="Company Logo" style="width:120px;" >
+
+  <mat-icon class="user-image-icon ml-1"  
+  style="margin-left:auto;margin-right:1%;list-style-type:none; ">translate</mat-icon>
+  <img src="./assets/images/user.svg" alt="" class="user-image mr-1 p-2" />
+  
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+  
+    <img
+    class="avatar mat-elevation-z8"
+    src="./assets/images/user.svg"
+  />
+
+  
+   <h4 class="name">User</h4>
+
+
+    <mat-divider></mat-divider>
+
+    <button mat-button class="menu-button" routerLink="/user-m">
+      <mat-icon>people</mat-icon> 
+      <span>User Management</span> 
+    </button>
+    <br>
+    <button mat-button class="menu-button" routerLink="/tarage">
+      <mat-icon>modestandby</mat-icon>
+      <span>Tarageted Employess</span>
+    </button>
+    <br>
+    <button mat-button class="menu-button" routerLink="/groups">
+      <mat-icon>groups</mat-icon>
+      <span>groups</span>
+    </button>
+    <br>
+    
+    <button mat-button class="menu-button" routerLink="/access-c">
+      <mat-icon>accessibility</mat-icon>
+      <span>Access Control </span>
+    </button>
+    <br>
+
+    <button mat-button class="menu-button" routerLink="/task-m">
+      <mat-icon>task</mat-icon>
+      <span> Task Management</span>
+    </button>
+    <br>   
+    <mat-divider></mat-divider>
+    <br>
+
+    <button mat-button class="menu-button" routerLink="/secur">
+      <mat-icon>flag</mat-icon>
+      <span>security incidents</span>
+    </button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
